@@ -43,9 +43,6 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-export VAGRANT_DEFAULT_PROVIDER=virtualbox
-export KUBERNETES_PROVIDER=vagrant
-
 function create_cluster {
   echo "Creating a kubernetes on ${KUBERNETES_PROVIDER:-gce}..."
   (
@@ -118,7 +115,8 @@ if [[ -n "${KUBERNETES_SKIP_CONFIRM-}" ]]; then
   fi
 fi
 
-if [[ ! -f kubernetes.tar.gz ]]; then
+# CHANGE: Check and please stop downloading every damn time
+if [[ ! -f ${file} ]]; then
   if [[ $(which wget) ]]; then
     wget -O ${file} ${release_url}
   elif [[ $(which curl) ]]; then
@@ -133,7 +131,7 @@ fi
 
 echo "Unpacking kubernetes release ${release}"
 tar -xzf ${file}
-# LOL. Don't.
+# CHANGE: LOL. Don't.
 # rm ${file}
 
 create_cluster
