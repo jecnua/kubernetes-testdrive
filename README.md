@@ -1,5 +1,7 @@
 # Playing with kubernetes 1.2
 
+Tested on OSX 10.11.4
+
 ## Usage
 
 First you have to export the variables in the env and then run the startup:
