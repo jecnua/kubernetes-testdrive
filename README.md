@@ -1,6 +1,9 @@
-# Playing with kubernetes 1.2
+# Playing with kubernetes 1.2.x
 
 Tested on OSX 10.11.4
+
+The starup.sh is the shell script that google ask you to curl-bash with small
+changes.
 
 ## To start a new cluster on Virtualbox
 
@@ -30,7 +33,7 @@ the script won't download the new archive.
 
 But you don't have this version! So just look at the shell when you start it ;)
 
-## To destory all
+## To destroy the VMs
 
 From this directory:
 
@@ -39,5 +42,10 @@ From this directory:
 
 ## NOTES
 
-- This specific script doesn't work with wmware_fusion as provider.
+- This specific script doesn't work with wmware_fusion as provider (their
+  constraint).
 - The .vagrant directory is save inside the kubernetes one.
+
+## TODO
+
+- Fix update problem (re-download only on update).
