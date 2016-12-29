@@ -1,4 +1,10 @@
-# Playing with kubernetes 1.2.x
+# OBSOLETE: Please don't refer to this repo
+
+Deprecated in favour of: https://github.com/jecnua/k8s-swarm-test-drive
+
+======================
+
+## Playing with kubernetes 1.2.x
 
 Tested on OSX 10.11.4
 
